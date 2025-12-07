@@ -1,0 +1,114 @@
+{
+  "/humanoid-robotics-book/__docusaurus/debug-fbb": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---humanoid-robotics-book-docusaurus-debugb-38-fea"
+    }
+  },
+  "/humanoid-robotics-book/__docusaurus/debug/config-58c": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---humanoid-robotics-book-docusaurus-debugb-38-fea"
+    }
+  },
+  "/humanoid-robotics-book/__docusaurus/debug/content-9ef": {
+    "__comp": "__comp---theme-debug-contentba-8-ce7",
+    "__context": {
+      "plugin": "plugin---humanoid-robotics-book-docusaurus-debugb-38-fea"
+    },
+    "__props": "__props---humanoid-robotics-book-docusaurus-debug-content-8-ac-f0a"
+  },
+  "/humanoid-robotics-book/__docusaurus/debug/globalData-5e0": {
+    "__comp": "__comp---theme-debug-global-dataede-0fa",
+    "__context": {
+      "plugin": "plugin---humanoid-robotics-book-docusaurus-debugb-38-fea"
+    }
+  },
+  "/humanoid-robotics-book/__docusaurus/debug/metadata-a6b": {
+    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
+    "__context": {
+      "plugin": "plugin---humanoid-robotics-book-docusaurus-debugb-38-fea"
+    }
+  },
+  "/humanoid-robotics-book/__docusaurus/debug/registry-969": {
+    "__comp": "__comp---theme-debug-registry-679-501",
+    "__context": {
+      "plugin": "plugin---humanoid-robotics-book-docusaurus-debugb-38-fea"
+    }
+  },
+  "/humanoid-robotics-book/__docusaurus/debug/routes-919": {
+    "__comp": "__comp---theme-debug-routes-946-699",
+    "__context": {
+      "plugin": "plugin---humanoid-robotics-book-docusaurus-debugb-38-fea"
+    }
+  },
+  "/humanoid-robotics-book/docs-d47": {
+    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
+    "__context": {
+      "plugin": "plugin---humanoid-robotics-book-docsaba-eb7"
+    }
+  },
+  "/humanoid-robotics-book/docs-514": {
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "__props": "__props---humanoid-robotics-book-docs-5-c-1-847"
+  },
+  "/humanoid-robotics-book/docs-dab": {
+    "__comp": "__comp---theme-doc-roota-94-67a"
+  },
+  "/humanoid-robotics-book/docs/assessments/gazebo-assessment-1f4": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---humanoid-robotics-book-docs-assessments-gazebo-assessment-653-c76"
+  },
+  "/humanoid-robotics-book/docs/assessments/intro-c34": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---humanoid-robotics-book-docs-assessments-introcd-2-902"
+  },
+  "/humanoid-robotics-book/docs/assessments/nvidia-isaac-assessment-408": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---humanoid-robotics-book-docs-assessments-nvidia-isaac-assessment-5-e-0-ba9"
+  },
+  "/humanoid-robotics-book/docs/assessments/ros2-assessment-01a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---humanoid-robotics-book-docs-assessments-ros-2-assessmentd-76-fe4"
+  },
+  "/humanoid-robotics-book/docs/assessments/vla-assessment-eed": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---humanoid-robotics-book-docs-assessments-vla-assessmentd-33-65d"
+  },
+  "/humanoid-robotics-book/docs/intro-3e4": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---humanoid-robotics-book-docs-introf-84-093"
+  },
+  "/humanoid-robotics-book/docs/modules/gazebo-unity-083": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---humanoid-robotics-book-docs-modules-gazebo-unity-943-a33"
+  },
+  "/humanoid-robotics-book/docs/modules/nvidia-isaac-fab": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---humanoid-robotics-book-docs-modules-nvidia-isaacdd-6-190"
+  },
+  "/humanoid-robotics-book/docs/modules/ros2-be5": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---humanoid-robotics-book-docs-modules-ros-230-a-497"
+  },
+  "/humanoid-robotics-book/docs/modules/vla-84a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---humanoid-robotics-book-docs-modules-vla-420-5cb"
+  },
+  "/humanoid-robotics-book/docs/week1-13/week1-0d0": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---humanoid-robotics-book-docs-week-1-13-week-17-dc-71a"
+  },
+  "/humanoid-robotics-book/docs/week1-13/week2-789": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---humanoid-robotics-book-docs-week-1-13-week-28-b-4-a8c"
+  },
+  "/humanoid-robotics-book/docs/week1-13/week3-eec": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---humanoid-robotics-book-docs-week-1-13-week-372-a-467"
+  },
+  "/humanoid-robotics-book/docs/week1-13/week4-027": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---humanoid-robotics-book-docs-week-1-13-week-417-b-b4e"
+  }
+}

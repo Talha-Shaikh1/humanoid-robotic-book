@@ -1,0 +1,65 @@
+---
+sidebar_position: 2
+title: 'Gazebo & Unity'
+---
+
+# Gazebo & Unity Module
+
+## Introduction to Simulation Environments
+Simulation environments like Gazebo and Unity are crucial for developing and testing robotics applications before deploying to real hardware. This module covers both physics-based simulation in Gazebo and game engine-based simulation in Unity.
+
+## Gazebo Simulation
+Gazebo provides realistic physics simulation and rendering capabilities for robotics applications. Key features include:
+- Physics engine with accurate collision detection
+- Sensor simulation (cameras, lidar, IMU, etc.)
+- Plugin system for custom functionality
+
+## Unity Simulation
+Unity offers a powerful game engine approach to robotics simulation with:
+- High-quality graphics rendering
+- Flexible physics system
+- Asset creation and management tools
+
+## Practical Examples
+This module includes URDF examples and simulation configurations:
+
+```xml
+<!-- Example URDF robot definition -->
+<?xml version="1.0"?>
+<robot name="simple_robot">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.5 0.5 0.5"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.5 0.5 0.5"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="base_to_wheel" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_link"/>
+    <origin xyz="0 0 -0.25" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <link name="wheel_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.15" length="0.1"/>
+      </geometry>
+    </visual>
+  </link>
+</robot>
+```
+
+## Learning Outcomes
+By the end of this module, you will understand:
+- How to create simulation environments in Gazebo and Unity
+- URDF and SDF formats for robot description
+- Sensor integration and visualization
+- Best practices for simulation-based testing

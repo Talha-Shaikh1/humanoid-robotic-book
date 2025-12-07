@@ -1,0 +1,28 @@
+{
+  "id": "week1-13/week2",
+  "title": "Week 2: ROS 2 Fundamentals",
+  "description": "Learning Objectives",
+  "source": "@site/docs/week1-13/week2.mdx",
+  "sourceDirName": "week1-13",
+  "slug": "/week1-13/week2",
+  "permalink": "/humanoid-robotics-book/docs/week1-13/week2",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/week1-13/week2.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2,
+    "title": "Week 2: ROS 2 Fundamentals"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Week 1: Introduction to Physical AI",
+    "permalink": "/humanoid-robotics-book/docs/week1-13/week1"
+  },
+  "next": {
+    "title": "Week 3: Simulation Environments - Gazebo",
+    "permalink": "/humanoid-robotics-book/docs/week1-13/week3"
+  }
+}

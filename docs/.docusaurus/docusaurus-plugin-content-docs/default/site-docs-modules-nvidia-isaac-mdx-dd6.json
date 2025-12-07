@@ -1,0 +1,28 @@
+{
+  "id": "modules/nvidia-isaac",
+  "title": "NVIDIA Isaac",
+  "description": "Introduction to NVIDIA Isaac",
+  "source": "@site/docs/modules/nvidia-isaac.mdx",
+  "sourceDirName": "modules",
+  "slug": "/modules/nvidia-isaac",
+  "permalink": "/humanoid-robotics-book/docs/modules/nvidia-isaac",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/modules/nvidia-isaac.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3,
+    "title": "NVIDIA Isaac"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Gazebo & Unity",
+    "permalink": "/humanoid-robotics-book/docs/modules/gazebo-unity"
+  },
+  "next": {
+    "title": "Vision-Language-Action (VLA) Models",
+    "permalink": "/humanoid-robotics-book/docs/modules/vla"
+  }
+}

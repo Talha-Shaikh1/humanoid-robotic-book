@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.specify/scripts/powershell/setup-plan.ps1 -Json)",
+      "Bash(git rev-parse --git-dir)",
+      "Bash(npx create-docusaurus@latest . textbook-ai-physical-ai --typescript false --package-manager npm)",
+      "Bash(npm init -y)",
+      "Bash(npm install @docusaurus/core@latest @docusaurus/preset-classic@latest @mdx-js/react@latest)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

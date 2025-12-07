@@ -1,0 +1,28 @@
+{
+  "id": "assessments/ros2-assessment",
+  "title": "ROS 2 Assessment",
+  "description": "Overview",
+  "source": "@site/docs/assessments/ros2-assessment.mdx",
+  "sourceDirName": "assessments",
+  "slug": "/assessments/ros2-assessment",
+  "permalink": "/humanoid-robotics-book/docs/assessments/ros2-assessment",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/assessments/ros2-assessment.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2,
+    "title": "ROS 2 Assessment"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Assessments Overview",
+    "permalink": "/humanoid-robotics-book/docs/assessments/intro"
+  },
+  "next": {
+    "title": "Gazebo Assessment",
+    "permalink": "/humanoid-robotics-book/docs/assessments/gazebo-assessment"
+  }
+}

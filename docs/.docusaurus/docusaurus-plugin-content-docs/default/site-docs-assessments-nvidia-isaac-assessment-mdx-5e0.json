@@ -1,0 +1,28 @@
+{
+  "id": "assessments/nvidia-isaac-assessment",
+  "title": "NVIDIA Isaac Assessment",
+  "description": "Overview",
+  "source": "@site/docs/assessments/nvidia-isaac-assessment.mdx",
+  "sourceDirName": "assessments",
+  "slug": "/assessments/nvidia-isaac-assessment",
+  "permalink": "/humanoid-robotics-book/docs/assessments/nvidia-isaac-assessment",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/assessments/nvidia-isaac-assessment.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4,
+    "title": "NVIDIA Isaac Assessment"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Gazebo Assessment",
+    "permalink": "/humanoid-robotics-book/docs/assessments/gazebo-assessment"
+  },
+  "next": {
+    "title": "VLA Models Assessment",
+    "permalink": "/humanoid-robotics-book/docs/assessments/vla-assessment"
+  }
+}
