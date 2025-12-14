@@ -62,7 +62,7 @@ function QuickLinks() {
       icon: '🤖',
       title: 'Humanoid Projects',
       desc: 'Build and program humanoid robots from scratch',
-      to: '/docs/category/projects',
+      to: '/docs',
       color: '#f59e0b'
     }
   ];
@@ -97,13 +97,13 @@ function QuickActions() {
         <div className={styles.actionsBar}>
           <Link 
             className="button button--outline button--secondary" 
-            to="/docs/tutorials"
+            to="/docs"
           >
             <span role="img" aria-label="tutorial">📖</span> Tutorials
           </Link>
           <Link 
             className="button button--outline button--secondary" 
-            to="/docs/labs"
+            to="/docs"
           >
             <span role="img" aria-label="lab">🔬</span> Hands-on Labs
           </Link>
@@ -116,7 +116,7 @@ function QuickActions() {
           </Link>
           <Link 
             className="button button--outline button--secondary" 
-            to="/community"
+            to="/docs"
           >
             <span role="img" aria-label="community">👥</span> Community
           </Link>
