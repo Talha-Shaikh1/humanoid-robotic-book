@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Arguments -->
+  <arg name="world" default="manipulation_world" />
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+
+  <!-- Start Gazebo with the specified world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find mobile_manipulation)/worlds/manipulation_world.world"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="headless" value="$(arg headless)"/>
+    <arg name="debug" value="$(arg debug)"/>
+  </include>
+
+  <!-- Load the robot description parameter -->
+  <param name="robot_description" command="$(find xacro)/xacro '$(find mobile_manipulation)/urdf/mobile_manipulator.urdf'" />
+
+  <!-- Spawn the robot in Gazebo -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model mobile_manipulator -x 0 -y 0 -z 0.2" />
+
+  <!-- Robot State Publisher -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+  <!-- Joint State Publisher -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+
+  <!-- Launch the manipulation controller -->
+  <node name="manipulation_controller" pkg="mobile_manipulation" type="manipulation_controller.py" output="screen" />
+
+  <!-- Load joint trajectory controller -->
+  <node name="controller_manager" pkg="controller_manager" type="spawner" args="arm_controller" />
+
+  <!-- Load gripper controller -->
+  <node name="gripper_controller_spawner" pkg="controller_manager" type="spawner" args="gripper_controller" />
+
+</launch>

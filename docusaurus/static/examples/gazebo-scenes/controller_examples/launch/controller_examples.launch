@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Arguments -->
+  <arg name="world" default="controller_world" />
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+  <arg name="controller_type" default="path_follower" /> <!-- path_follower or pid -->
+
+  <!-- Start Gazebo with the specified world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find controller_examples)/worlds/controller_world.world"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="headless" value="$(arg headless)"/>
+    <arg name="debug" value="$(arg debug)"/>
+  </include>
+
+  <!-- Load the robot description parameter -->
+  <param name="robot_description" command="$(find xacro)/xacro '$(find controller_examples)/urdf/controller_robot.urdf'" />
+
+  <!-- Spawn the robot in Gazebo -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model controller_robot -x 0 -y 0 -z 0.2" />
+
+  <!-- Robot State Publisher -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+  <!-- Joint State Publisher (for visualization) -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+
+  <!-- Launch the appropriate controller based on argument -->
+  <group if="$(eval controller_type == 'path_follower')">
+    <node name="path_follower_controller" pkg="controller_examples" type="path_follower_controller.py" output="screen" />
+  </group>
+
+  <group if="$(eval controller_type == 'pid')">
+    <node name="pid_controller" pkg="controller_examples" type="pid_controller.py" output="screen" />
+  </group>
+
+</launch>

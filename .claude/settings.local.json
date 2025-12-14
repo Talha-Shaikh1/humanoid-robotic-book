@@ -1,13 +1,32 @@
 {
   "permissions": {
     "allow": [
-      "Bash(.specify/scripts/powershell/setup-plan.ps1 -Json)",
+      "Bash(git fetch --all --prune)",
+      "Bash(powershell -ExecutionPolicy Bypass -File \".specify/scripts/powershell/create-new-feature.ps1\" -Json \"AI-Native Humanoid Robotics Textbook — BOOK-ONLY\n\nIntent:\nCreate a complete, production-quality AI-native textbook on Physical AI & Humanoid Robotics using Docusaurus, Spec-Kit Plus, and Claude Code. This specification focuses ONLY on the Book deliverable: module/chapter content, runnable code examples, diagrams, exercises, pedagogy, and deployment to GitHub Pages. Chatbot, personalization, auth, and Urdu features are explicitly excluded in this spec and will be handled later.\n\nTarget audience:\n- Students learning Physical AI, ROS 2, Gazebo, Isaac Sim, VLA\n- Beginners → intermediate robotics developers\n- Educators adopting a robotics curriculum\n- Hackathon judges evaluating textbook quality and reproducibility\n\nScope (WHAT will be built — Book only):\n- Top-level structure: 4 modules mapped to course\n  • Module 1 — ROS 2: Robotic Nervous System\n  • Module 2 — Gazebo & Unity: Digital Twin\n  • Module 3 — NVIDIA Isaac: AI-Robot Brain\n  • Module 4 — Vision-Language-Action (VLA)\n- Chapters: 3–6 chapters per module (total target 12–20 chapters)\n- Each chapter MUST include:\n  • Purpose & Learning outcomes\n  • Short intro + 3–6 conceptual sections\n  • Minimum 1 diagram (Mermaid or ASCII) + diagram caption/alt text\n  • Minimum 2 code examples (runnable or clearly annotated) — prefer ROS2 Python (rclpy); include C++ where necessary\n  • At least 1 hands-on simulation task or lab exercise\n  • Summary, further reading, and 3 practice questions\n  • \"Check your understanding\" quick quiz (3 MCQs)\n  • RAG-anchorable text blocks (chunk IDs) for future RAG work (metadata only)\n  • TODO placeholders for future Urdu translation (metadata only)\n- For code examples: include short README or run instructions for each example (dependencies, ROS2 distro, launch commands)\n- Include a project appendix with recommended workstation specs and cloud alternatives (as in Constitution)\n- Docusaurus folder structure and frontmatter per page\n\nSuccess criteria (SMART):\n- Book contains 12–20 chapters covering all four modules\n- Each chapter includes at least 2 runnable/validatable code examples\n- Each chapter includes at least 1 diagram and 1 hands-on task\n- Book builds successfully with Docusaurus and deploys to GitHub Pages without build warnings\n- 100% of robotics definitions conform to official ROS 2 / Isaac / Gazebo public docs (per Constitution)\n- At least 80% of code samples execute locally within the specified environment (documented run instructions)\n- Acceptance checklist per chapter (learning outcomes, runnable examples, diagrams, exercises) must be green\n\nConstraints:\n- Must follow Constitution: accuracy, pedagogy, reproducibility, and format rules\n- Do not implement or include Chatbot, RAG code, authentication, personalization, or Urdu translation in this phase\n- Use only public documentation and reference links (no copyrighted course text)\n- Code examples should target Ubuntu 22.04 + recommended ROS2 distro (documented per example)\n- Keep chapter length manageable (recommended 800–2000 words ctions\n- No physical robot wiring/PCB work\n\nTesting & Validation:\n- Build the Docusaurus site locally and verify no warnings/errors\n- Run each code example or simulation task and provide run log or smoke-test result in docs\n- Validate URDF examples syntactically (provide basic URDF lint results or notes)\n- Validate any Unity/Gazebo scenes load (basic smoke test instructions)\n- Chapter acceptance checklist (one per chapter) for automated/manual review\n\nDeliverables produced by this spec:\n- specs/humanoid-book/spec.md (complete book specification)\n- plan/humanoid-book/plan.md (module → chapter plan with diagram and code requirements)\n- tasks/humanoid-book/tasks.md (task breakdown for chapters + assets)\n- doc-templates/ (chapter template, code example README template, diagram template)\n- docusaurus/ ready-to-populate folder map and frontmatter examples\n- acceptance-checklist.md with per-chapter criteria\n- deployment-instructions.md (GitHub Pages step-by-step)\n\nSuccess metrics for this phase:\n- Docusaurus site\" -Number 1 -ShortName \"humanoid-book\" \"AI-Native Humanoid Robotics Textbook — BOOK-ONLY\")",
+      "Bash(powershell -ExecutionPolicy Bypass -File \".specify/scripts/powershell/create-new-feature.ps1\" -Json -ShortName \"humanoid-book\" -Number 1 \"AI-Native Humanoid Robotics Textbook — BOOK-ONLY\")",
+      "Bash(.specify/scripts/bash/create-phr.sh --title \"Create Humanoid Robotics Textbook Spec\" --stage spec --feature \"001-humanoid-book\" --json)",
+      "Bash(git config user.name)",
+      "Bash(powershell -ExecutionPolicy Bypass -File \".specify/scripts/powershell/setup-plan.ps1\" -Json)",
+      "Bash(powershell -ExecutionPolicy Bypass -File \".specify/scripts/powershell/check-prerequisites.ps1\" -Json)",
+      "Bash(powershell -ExecutionPolicy Bypass -File \".specify/scripts/powershell/check-prerequisites.ps1\" -Json -RequireTasks -IncludeTasks)",
       "Bash(git rev-parse --git-dir)",
-      "Bash(npx create-docusaurus@latest . textbook-ai-physical-ai --typescript false --package-manager npm)",
-      "Bash(npm init -y)",
-      "Bash(npm install @docusaurus/core@latest @docusaurus/preset-classic@latest @mdx-js/react@latest)"
-    ],
-    "deny": [],
-    "ask": []
+      "Bash(mkdir -p \"docusaurus/docs/module-1-ros2\" \"docusaurus/docs/module-2-gazebo-unity\" \"docusaurus/docs/module-3-isaac\" \"docusaurus/docs/module-4-vla\" \"docusaurus/src/components\" \"docusaurus/static/img/diagrams\" \"docusaurus/static/examples/ros2-examples/python\" \"docusaurus/static/examples/ros2-examples/cpp\" \"docusaurus/static/examples/gazebo-scenes\" \"docusaurus/static/examples/isaac-sim-examples\" \"docusaurus/assets/code-examples/python\" \"docusaurus/assets/code-examples/cpp\" \"docusaurus/assets/diagrams/mermaid\" \"docusaurus/assets/diagrams/ascii\" \"docusaurus/test/validation/code-examples\" \"docusaurus/test/validation/diagrams\")",
+      "Bash(findstr /n /C:\"ROS2 Advanced\")",
+      "Bash(python docusaurus/static/examples/validate_examples.py)",
+      "Bash(npm install)",
+      "Bash(npm start)",
+      "Bash(dir)",
+      "Bash(dir docusaurus)",
+      "Bash(dir \"C:\\New folder\\humanoid-robotics-ai-book\\docusaurus\")",
+      "Bash(dir \"C:\\New folder\\humanoid-robotics-ai-book\\docusaurus\\docs\" /s)",
+      "Bash(xcopy \"C:\\New folder\\humanoid-robotics-ai-book\\docusaurus\\docs\" \"C:\\New folder\\humanoid-robotics-ai-book\\docs\" /E /I)",
+      "Bash(xcopy /E /I \"C:\\New folder\\humanoid-robotics-ai-book\\docusaurus\\docs\" \"C:\\New folder\\humanoid-robotics-ai-book\\docs\")",
+      "Bash(robocopy \"C:\\New folder\\humanoid-robotics-ai-book\\docusaurus\\docs\" \"C:\\New folder\\humanoid-robotics-ai-book\\docs\" /E)",
+      "Bash(dir \"C:\\New folder\\humanoid-robotics-ai-book\\docs\")",
+      "Bash(dir \"C:\\New folder\\humanoid-robotics-ai-book\\docusaurus\\src\")",
+      "Bash(dir \"C:\\New folder\\humanoid-robotics-ai-book\\docusaurus\\src\\pages\")",
+      "Bash(npx docusaurus clear)",
+      "Bash(npx kill-port 3000)"
+    ]
   }
 }

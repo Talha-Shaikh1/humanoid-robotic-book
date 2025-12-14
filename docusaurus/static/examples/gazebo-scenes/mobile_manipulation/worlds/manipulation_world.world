@@ -1,0 +1,328 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="manipulation_world">
+    <!-- Include ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- Include sun -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Boundary walls -->
+    <model name="wall_north">
+      <pose>0 4 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>8 0.2 1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>8 0.2 1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.7 0.7 0.7 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+          </material>
+        </visual>
+        <inertial>
+          <mass>10.0</mass>
+          <inertia>
+            <ixx>10.683333</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>53.333333</iyy>
+            <iyz>0</iyz>
+            <izz>64.0</izz>
+          </inertia>
+        </inertial>
+      </link>
+    </model>
+
+    <model name="wall_south">
+      <pose>0 -4 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>8 0.2 1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>8 0.2 1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.7 0.7 0.7 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+          </material>
+        </visual>
+        <inertial>
+          <mass>10.0</mass>
+          <inertia>
+            <ixx>10.683333</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>53.333333</iyy>
+            <iyz>0</iyz>
+            <izz>64.0</izz>
+          </inertia>
+        </inertial>
+      </link>
+    </model>
+
+    <model name="wall_east">
+      <pose>4 0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.2 8 1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.2 8 1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.7 0.7 0.7 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+          </material>
+        </visual>
+        <inertial>
+          <mass>10.0</mass>
+          <inertia>
+            <ixx>53.333333</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>10.683333</iyy>
+            <iyz>0</iyz>
+            <izz>64.0</izz>
+          </inertia>
+        </inertial>
+      </link>
+    </model>
+
+    <model name="wall_west">
+      <pose>-4 0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.2 8 1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.2 8 1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.7 0.7 0.7 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+          </material>
+        </visual>
+        <inertial>
+          <mass>10.0</mass>
+          <inertia>
+            <ixx>53.333333</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>10.683333</iyy>
+            <iyz>0</iyz>
+            <izz>64.0</izz>
+          </inertia>
+        </inertial>
+      </link>
+    </model>
+
+    <!-- Object to be manipulated (red box) -->
+    <model name="object_to_grasp">
+      <pose>2 1 0.1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.0 0.0 1</ambient>
+            <diffuse>1.0 0.0 0.0 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+          </material>
+        </visual>
+        <inertial>
+          <mass>0.2</mass>
+          <inertia>
+            <ixx>0.000333</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.000333</iyy>
+            <iyz>0</iyz>
+            <izz>0.000333</izz>
+          </inertia>
+        </inertial>
+      </link>
+    </model>
+
+    <!-- Target location (blue box) -->
+    <model name="target_location">
+      <pose>-1 -1 0.05 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.3 0.3 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.8 0.5</ambient>
+            <diffuse>0.0 0.0 1.0 0.5</diffuse>
+            <specular>0.2 0.2 0.2 0.5</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Table for the robot to work with -->
+    <model name="work_table">
+      <pose>2 -1 0.4 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1.0 0.8 0.8</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1.0 0.8 0.8</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.6 0.4 0.2 1</ambient>
+            <diffuse>0.8 0.6 0.4 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+          </material>
+        </visual>
+        <inertial>
+          <mass>10.0</mass>
+          <inertia>
+            <ixx>1.133333</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.416667</iyy>
+            <iyz>0</iyz>
+            <izz>0.283333</izz>
+          </inertia>
+        </inertial>
+      </link>
+    </model>
+
+    <!-- Additional objects for more complex manipulation -->
+    <model name="object2">
+      <pose>1 2 0.1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.1</length>
+            </geometry>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.1</length>
+            </geometry>
+          </geometry>
+          <material>
+            <ambient>0.0 0.8 0.0 1</ambient>
+            <diffuse>0.0 1.0 0.0 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+          </material>
+        </visual>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.000037</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.000037</iyy>
+            <iyz>0</iyz>
+            <izz>0.000025</izz>
+          </inertia>
+        </inertial>
+      </link>
+    </model>
+
+    <model name="object3">
+      <pose>-2 2 0.1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <sphere>
+              <radius>0.05</radius>
+            </sphere>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <sphere>
+              <radius>0.05</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.0 1</ambient>
+            <diffuse>1.0 1.0 0.0 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+          </material>
+        </visual>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00001</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00001</iyy>
+            <iyz>0</iyz>
+            <izz>0.00001</izz>
+          </inertia>
+        </inertial>
+      </link>
+    </model>
+
+  </world>
+</sdf>

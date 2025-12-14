@@ -1,0 +1,50 @@
+.chapterContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.chapterHeader {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.chapterTitle {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.chapterDescription {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 0;
+}
+
+.learningOutcomes {
+  background-color: #f8f9fa;
+  border-left: 4px solid #007cba;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.learningOutcomes h2 {
+  margin-top: 0;
+  color: #007cba;
+  font-size: 1.3rem;
+}
+
+.learningOutcomes ul {
+  margin: 0.5rem 0 0 0;
+  padding-left: 1.5rem;
+}
+
+.learningOutcomes li {
+  margin-bottom: 0.5rem;
+}
+
+.chapterContent {
+  margin-top: 2rem;
+}

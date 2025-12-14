@@ -1,0 +1,1144 @@
+# ROS2 Control Configuration for Humanoid Robot
+
+# Controller Manager Configuration
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz
+
+    # Joint State Broadcaster - broadcasts all joint states
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    # Individual joint controllers
+    left_leg_controller:
+      type: position_controllers/JointGroupPositionController
+
+    right_leg_controller:
+      type: position_controllers/JointGroupPositionController
+
+    left_arm_controller:
+      type: position_controllers/JointGroupPositionController
+
+    right_arm_controller:
+      type: position_controllers/JointGroupPositionController
+
+    head_controller:
+      type: position_controllers/JointGroupPositionController
+
+    # Whole body controller
+    whole_body_controller:
+      type: position_controllers/JointGroupPositionController
+
+# Left Leg Controller Configuration
+left_leg_controller:
+  ros__parameters:
+    joints:
+      - left_hip_yaw
+      - left_hip_roll
+      - left_hip_pitch
+      - left_knee
+      - left_ankle_pitch
+      - left_ankle_roll
+
+# Right Leg Controller Configuration
+right_leg_controller:
+  ros__parameters:
+    joints:
+      - right_hip_yaw
+      - right_hip_roll
+      - right_hip_pitch
+      - right_knee
+      - right_ankle_pitch
+      - right_ankle_roll
+
+# Left Arm Controller Configuration
+left_arm_controller:
+  ros__parameters:
+    joints:
+      - left_shoulder_pitch
+      - left_shoulder_roll
+      - left_shoulder_yaw
+      - left_elbow
+      - left_wrist_pitch
+      - left_wrist_yaw
+
+# Right Arm Controller Configuration
+right_arm_controller:
+  ros__parameters:
+    joints:
+      - right_shoulder_pitch
+      - right_shoulder_roll
+      - right_shoulder_yaw
+      - right_elbow
+      - right_wrist_pitch
+      - right_wrist_yaw
+
+# Head Controller Configuration
+head_controller:
+  ros__parameters:
+    joints:
+      - neck_yaw
+      - neck_pitch
+
+# Whole Body Controller Configuration
+whole_body_controller:
+  ros__parameters:
+    joints:
+      - left_hip_yaw
+      - left_hip_roll
+      - left_hip_pitch
+      - left_knee
+      - left_ankle_pitch
+      - left_ankle_roll
+      - right_hip_yaw
+      - right_hip_roll
+      - right_hip_pitch
+      - right_knee
+      - right_ankle_pitch
+      - right_ankle_roll
+      - left_shoulder_pitch
+      - left_shoulder_roll
+      - left_shoulder_yaw
+      - left_elbow
+      - left_wrist_pitch
+      - left_wrist_yaw
+      - right_shoulder_pitch
+      - right_shoulder_roll
+      - right_shoulder_yaw
+      - right_elbow
+      - right_wrist_pitch
+      - right_wrist_yaw
+      - neck_yaw
+      - neck_pitch
+
+# Individual Joint Position Controllers (alternative approach)
+left_hip_yaw_position_controller:
+  ros__parameters:
+    joint: left_hip_yaw
+    interface_name: position
+
+left_hip_roll_position_controller:
+  ros__parameters:
+    joint: left_hip_roll
+    interface_name: position
+
+left_hip_pitch_position_controller:
+  ros__parameters:
+    joint: left_hip_pitch
+    interface_name: position
+
+left_knee_position_controller:
+  ros__parameters:
+    joint: left_knee
+    interface_name: position
+
+left_ankle_pitch_position_controller:
+  ros__parameters:
+    joint: left_ankle_pitch
+    interface_name: position
+
+left_ankle_roll_position_controller:
+  ros__parameters:
+    joint: left_ankle_roll
+    interface_name: position
+
+right_hip_yaw_position_controller:
+  ros__parameters:
+    joint: right_hip_yaw
+    interface_name: position
+
+right_hip_roll_position_controller:
+  ros__parameters:
+    joint: right_hip_roll
+    interface_name: position
+
+right_hip_pitch_position_controller:
+  ros__parameters:
+    joint: right_hip_pitch
+    interface_name: position
+
+right_knee_position_controller:
+  ros__parameters:
+    joint: right_knee
+    interface_name: position
+
+right_ankle_pitch_position_controller:
+  ros__parameters:
+    joint: right_ankle_pitch
+    interface_name: position
+
+right_ankle_roll_position_controller:
+  ros__parameters:
+    joint: right_ankle_roll
+    interface_name: position
+
+left_shoulder_pitch_position_controller:
+  ros__parameters:
+    joint: left_shoulder_pitch
+    interface_name: position
+
+left_shoulder_roll_position_controller:
+  ros__parameters:
+    joint: left_shoulder_roll
+    interface_name: position
+
+left_shoulder_yaw_position_controller:
+  ros__parameters:
+    joint: left_shoulder_yaw
+    interface_name: position
+
+left_elbow_position_controller:
+  ros__parameters:
+    joint: left_elbow
+    interface_name: position
+
+left_wrist_pitch_position_controller:
+  ros__parameters:
+    joint: left_wrist_pitch
+    interface_name: position
+
+left_wrist_yaw_position_controller:
+  ros__parameters:
+    joint: left_wrist_yaw
+    interface_name: position
+
+right_shoulder_pitch_position_controller:
+  ros__parameters:
+    joint: right_shoulder_pitch
+    interface_name: position
+
+right_shoulder_roll_position_controller:
+  ros__parameters:
+    joint: right_shoulder_roll
+    interface_name: position
+
+right_shoulder_yaw_position_controller:
+  ros__parameters:
+    joint: right_shoulder_yaw
+    interface_name: position
+
+right_elbow_position_controller:
+  ros__parameters:
+    joint: right_elbow
+    interface_name: position
+
+right_wrist_pitch_position_controller:
+  ros__parameters:
+    joint: right_wrist_pitch
+    interface_name: position
+
+right_wrist_yaw_position_controller:
+  ros__parameters:
+    joint: right_wrist_yaw
+    interface_name: position
+
+neck_yaw_position_controller:
+  ros__parameters:
+    joint: neck_yaw
+    interface_name: position
+
+neck_pitch_position_controller:
+  ros__parameters:
+    joint: neck_pitch
+    interface_name: position
+
+# Velocity Controllers (for dynamic movements)
+left_hip_yaw_velocity_controller:
+  ros__parameters:
+    joint: left_hip_yaw
+    interface_name: velocity
+
+left_hip_roll_velocity_controller:
+  ros__parameters:
+    joint: left_hip_roll
+    interface_name: velocity
+
+left_hip_pitch_velocity_controller:
+  ros__parameters:
+    joint: left_hip_pitch
+    interface_name: velocity
+
+left_knee_velocity_controller:
+  ros__parameters:
+    joint: left_knee
+    interface_name: velocity
+
+left_ankle_pitch_velocity_controller:
+  ros__parameters:
+    joint: left_ankle_pitch
+    interface_name: velocity
+
+left_ankle_roll_velocity_controller:
+  ros__parameters:
+    joint: left_ankle_roll
+    interface_name: velocity
+
+right_hip_yaw_velocity_controller:
+  ros__parameters:
+    joint: right_hip_yaw
+    interface_name: velocity
+
+right_hip_roll_velocity_controller:
+  ros__parameters:
+    joint: right_hip_roll
+    interface_name: velocity
+
+right_hip_pitch_velocity_controller:
+  ros__parameters:
+    joint: right_hip_pitch
+    interface_name: velocity
+
+right_knee_velocity_controller:
+  ros__parameters:
+    joint: right_knee
+    interface_name: velocity
+
+right_ankle_pitch_velocity_controller:
+  ros__parameters:
+    joint: right_ankle_pitch
+    interface_name: velocity
+
+right_ankle_roll_velocity_controller:
+  ros__parameters:
+    joint: right_ankle_roll
+    interface_name: velocity
+
+left_shoulder_pitch_velocity_controller:
+  ros__parameters:
+    joint: left_shoulder_pitch
+    interface_name: velocity
+
+left_shoulder_roll_velocity_controller:
+  ros__parameters:
+    joint: left_shoulder_roll
+    interface_name: velocity
+
+left_shoulder_yaw_velocity_controller:
+  ros__parameters:
+    joint: left_shoulder_yaw
+    interface_name: velocity
+
+left_elbow_velocity_controller:
+  ros__parameters:
+    joint: left_elbow
+    interface_name: velocity
+
+left_wrist_pitch_velocity_controller:
+  ros__parameters:
+    joint: left_wrist_pitch
+    interface_name: velocity
+
+left_wrist_yaw_velocity_controller:
+  ros__parameters:
+    joint: left_wrist_yaw
+    interface_name: velocity
+
+right_shoulder_pitch_velocity_controller:
+  ros__parameters:
+    joint: right_shoulder_pitch
+    interface_name: velocity
+
+right_shoulder_roll_velocity_controller:
+  ros__parameters:
+    joint: right_shoulder_roll
+    interface_name: velocity
+
+right_shoulder_yaw_velocity_controller:
+  ros__parameters:
+    joint: right_shoulder_yaw
+    interface_name: velocity
+
+right_elbow_velocity_controller:
+  ros__parameters:
+    joint: right_elbow
+    interface_name: velocity
+
+right_wrist_pitch_velocity_controller:
+  ros__parameters:
+    joint: right_wrist_pitch
+    interface_name: velocity
+
+right_wrist_yaw_velocity_controller:
+  ros__parameters:
+    joint: right_wrist_yaw
+    interface_name: velocity
+
+neck_yaw_velocity_controller:
+  ros__parameters:
+    joint: neck_yaw
+    interface_name: velocity
+
+neck_pitch_velocity_controller:
+  ros__parameters:
+    joint: neck_pitch
+    interface_name: velocity
+
+# Effort Controllers (for force control)
+left_hip_yaw_effort_controller:
+  ros__parameters:
+    joint: left_hip_yaw
+    interface_name: effort
+
+left_hip_roll_effort_controller:
+  ros__parameters:
+    joint: left_hip_roll
+    interface_name: effort
+
+left_hip_pitch_effort_controller:
+  ros__parameters:
+    joint: left_hip_pitch
+    interface_name: effort
+
+left_knee_effort_controller:
+  ros__parameters:
+    joint: left_knee
+    interface_name: effort
+
+left_ankle_pitch_effort_controller:
+  ros__parameters:
+    joint: left_ankle_pitch
+    interface_name: effort
+
+left_ankle_roll_effort_controller:
+  ros__parameters:
+    joint: left_ankle_roll
+    interface_name: effort
+
+right_hip_yaw_effort_controller:
+  ros__parameters:
+    joint: right_hip_yaw
+    interface_name: effort
+
+right_hip_roll_effort_controller:
+  ros__parameters:
+    joint: right_hip_roll
+    interface_name: effort
+
+right_hip_pitch_effort_controller:
+  ros__parameters:
+    joint: right_hip_pitch
+    interface_name: effort
+
+right_knee_effort_controller:
+  ros__parameters:
+    joint: right_knee
+    interface_name: effort
+
+right_ankle_pitch_effort_controller:
+  ros__parameters:
+    joint: right_ankle_pitch
+    interface_name: effort
+
+right_ankle_roll_effort_controller:
+  ros__parameters:
+    joint: right_ankle_roll
+    interface_name: effort
+
+left_shoulder_pitch_effort_controller:
+  ros__parameters:
+    joint: left_shoulder_pitch
+    interface_name: effort
+
+left_shoulder_roll_effort_controller:
+  ros__parameters:
+    joint: left_shoulder_roll
+    interface_name: effort
+
+left_shoulder_yaw_effort_controller:
+  ros__parameters:
+    joint: left_shoulder_yaw
+    interface_name: effort
+
+left_elbow_effort_controller:
+  ros__parameters:
+    joint: left_elbow
+    interface_name: effort
+
+left_wrist_pitch_effort_controller:
+  ros__parameters:
+    joint: left_wrist_pitch
+    interface_name: effort
+
+left_wrist_yaw_effort_controller:
+  ros__parameters:
+    joint: left_wrist_yaw
+    interface_name: effort
+
+right_shoulder_pitch_effort_controller:
+  ros__parameters:
+    joint: right_shoulder_pitch
+    interface_name: effort
+
+right_shoulder_roll_effort_controller:
+  ros__parameters:
+    joint: right_shoulder_roll
+    interface_name: effort
+
+right_shoulder_yaw_effort_controller:
+  ros__parameters:
+    joint: right_shoulder_yaw
+    interface_name: effort
+
+right_elbow_effort_controller:
+  ros__parameters:
+    joint: right_elbow
+    interface_name: effort
+
+right_wrist_pitch_effort_controller:
+  ros__parameters:
+    joint: right_wrist_pitch
+    interface_name: effort
+
+right_wrist_yaw_effort_controller:
+  ros__parameters:
+    joint: right_wrist_yaw
+    interface_name: effort
+
+neck_yaw_effort_controller:
+  ros__parameters:
+    joint: neck_yaw
+    interface_name: effort
+
+neck_pitch_effort_controller:
+  ros__parameters:
+    joint: neck_pitch
+    interface_name: effort
+
+# PID Controller Gains for Position Control
+position_controller_gains:
+  ros__parameters:
+    # Hip joints
+    left_hip_yaw:
+      p: 100.0
+      i: 0.01
+      d: 10.0
+      i_clamp: 1.0
+      antiwindup: true
+    left_hip_roll:
+      p: 100.0
+      i: 0.01
+      d: 10.0
+      i_clamp: 1.0
+      antiwindup: true
+    left_hip_pitch:
+      p: 100.0
+      i: 0.01
+      d: 10.0
+      i_clamp: 1.0
+      antiwindup: true
+    right_hip_yaw:
+      p: 100.0
+      i: 0.01
+      d: 10.0
+      i_clamp: 1.0
+      antiwindup: true
+    right_hip_roll:
+      p: 100.0
+      i: 0.01
+      d: 10.0
+      i_clamp: 1.0
+      antiwindup: true
+    right_hip_pitch:
+      p: 100.0
+      i: 0.01
+      d: 10.0
+      i_clamp: 1.0
+      antiwindup: true
+
+    # Knee joints
+    left_knee:
+      p: 80.0
+      i: 0.01
+      d: 8.0
+      i_clamp: 1.0
+      antiwindup: true
+    right_knee:
+      p: 80.0
+      i: 0.01
+      d: 8.0
+      i_clamp: 1.0
+      antiwindup: true
+
+    # Ankle joints
+    left_ankle_pitch:
+      p: 50.0
+      i: 0.01
+      d: 5.0
+      i_clamp: 1.0
+      antiwindup: true
+    left_ankle_roll:
+      p: 50.0
+      i: 0.01
+      d: 5.0
+      i_clamp: 1.0
+      antiwindup: true
+    right_ankle_pitch:
+      p: 50.0
+      i: 0.01
+      d: 5.0
+      i_clamp: 1.0
+      antiwindup: true
+    right_ankle_roll:
+      p: 50.0
+      i: 0.01
+      d: 5.0
+      i_clamp: 1.0
+      antiwindup: true
+
+    # Shoulder joints
+    left_shoulder_pitch:
+      p: 60.0
+      i: 0.01
+      d: 6.0
+      i_clamp: 1.0
+      antiwindup: true
+    left_shoulder_roll:
+      p: 60.0
+      i: 0.01
+      d: 6.0
+      i_clamp: 1.0
+      antiwindup: true
+    left_shoulder_yaw:
+      p: 60.0
+      i: 0.01
+      d: 6.0
+      i_clamp: 1.0
+      antiwindup: true
+    right_shoulder_pitch:
+      p: 60.0
+      i: 0.01
+      d: 6.0
+      i_clamp: 1.0
+      antiwindup: true
+    right_shoulder_roll:
+      p: 60.0
+      i: 0.01
+      d: 6.0
+      i_clamp: 1.0
+      antiwindup: true
+    right_shoulder_yaw:
+      p: 60.0
+      i: 0.01
+      d: 6.0
+      i_clamp: 1.0
+      antiwindup: true
+
+    # Elbow and wrist joints
+    left_elbow:
+      p: 40.0
+      i: 0.01
+      d: 4.0
+      i_clamp: 1.0
+      antiwindup: true
+    left_wrist_pitch:
+      p: 30.0
+      i: 0.01
+      d: 3.0
+      i_clamp: 1.0
+      antiwindup: true
+    left_wrist_yaw:
+      p: 30.0
+      i: 0.01
+      d: 3.0
+      i_clamp: 1.0
+      antiwindup: true
+    right_elbow:
+      p: 40.0
+      i: 0.01
+      d: 4.0
+      i_clamp: 1.0
+      antiwindup: true
+    right_wrist_pitch:
+      p: 30.0
+      i: 0.01
+      d: 3.0
+      i_clamp: 1.0
+      antiwindup: true
+    right_wrist_yaw:
+      p: 30.0
+      i: 0.01
+      d: 3.0
+      i_clamp: 1.0
+      antiwindup: true
+
+    # Neck joints
+    neck_yaw:
+      p: 25.0
+      i: 0.01
+      d: 2.5
+      i_clamp: 1.0
+      antiwindup: true
+    neck_pitch:
+      p: 25.0
+      i: 0.01
+      d: 2.5
+      i_clamp: 1.0
+      antiwindup: true
+
+# PID Controller Gains for Velocity Control
+velocity_controller_gains:
+  ros__parameters:
+    # Hip joints
+    left_hip_yaw:
+      p: 20.0
+      i: 0.1
+      d: 2.0
+      i_clamp: 10.0
+      antiwindup: true
+    left_hip_roll:
+      p: 20.0
+      i: 0.1
+      d: 2.0
+      i_clamp: 10.0
+      antiwindup: true
+    left_hip_pitch:
+      p: 20.0
+      i: 0.1
+      d: 2.0
+      i_clamp: 10.0
+      antiwindup: true
+    right_hip_yaw:
+      p: 20.0
+      i: 0.1
+      d: 2.0
+      i_clamp: 10.0
+      antiwindup: true
+    right_hip_roll:
+      p: 20.0
+      i: 0.1
+      d: 2.0
+      i_clamp: 10.0
+      antiwindup: true
+    right_hip_pitch:
+      p: 20.0
+      i: 0.1
+      d: 2.0
+      i_clamp: 10.0
+      antiwindup: true
+
+    # Knee joints
+    left_knee:
+      p: 15.0
+      i: 0.1
+      d: 1.5
+      i_clamp: 10.0
+      antiwindup: true
+    right_knee:
+      p: 15.0
+      i: 0.1
+      d: 1.5
+      i_clamp: 10.0
+      antiwindup: true
+
+    # Ankle joints
+    left_ankle_pitch:
+      p: 12.0
+      i: 0.1
+      d: 1.2
+      i_clamp: 10.0
+      antiwindup: true
+    left_ankle_roll:
+      p: 12.0
+      i: 0.1
+      d: 1.2
+      i_clamp: 10.0
+      antiwindup: true
+    right_ankle_pitch:
+      p: 12.0
+      i: 0.1
+      d: 1.2
+      i_clamp: 10.0
+      antiwindup: true
+    right_ankle_roll:
+      p: 12.0
+      i: 0.1
+      d: 1.2
+      i_clamp: 10.0
+      antiwindup: true
+
+    # Shoulder joints
+    left_shoulder_pitch:
+      p: 18.0
+      i: 0.1
+      d: 1.8
+      i_clamp: 10.0
+      antiwindup: true
+    left_shoulder_roll:
+      p: 18.0
+      i: 0.1
+      d: 1.8
+      i_clamp: 10.0
+      antiwindup: true
+    left_shoulder_yaw:
+      p: 18.0
+      i: 0.1
+      d: 1.8
+      i_clamp: 10.0
+      antiwindup: true
+    right_shoulder_pitch:
+      p: 18.0
+      i: 0.1
+      d: 1.8
+      i_clamp: 10.0
+      antiwindup: true
+    right_shoulder_roll:
+      p: 18.0
+      i: 0.1
+      d: 1.8
+      i_clamp: 10.0
+      antiwindup: true
+    right_shoulder_yaw:
+      p: 18.0
+      i: 0.1
+      d: 1.8
+      i_clamp: 10.0
+      antiwindup: true
+
+    # Elbow and wrist joints
+    left_elbow:
+      p: 10.0
+      i: 0.1
+      d: 1.0
+      i_clamp: 10.0
+      antiwindup: true
+    left_wrist_pitch:
+      p: 8.0
+      i: 0.1
+      d: 0.8
+      i_clamp: 10.0
+      antiwindup: true
+    left_wrist_yaw:
+      p: 8.0
+      i: 0.1
+      d: 0.8
+      i_clamp: 10.0
+      antiwindup: true
+    right_elbow:
+      p: 10.0
+      i: 0.1
+      d: 1.0
+      i_clamp: 10.0
+      antiwindup: true
+    right_wrist_pitch:
+      p: 8.0
+      i: 0.1
+      d: 0.8
+      i_clamp: 10.0
+      antiwindup: true
+    right_wrist_yaw:
+      p: 8.0
+      i: 0.1
+      d: 0.8
+      i_clamp: 10.0
+      antiwindup: true
+
+    # Neck joints
+    neck_yaw:
+      p: 6.0
+      i: 0.1
+      d: 0.6
+      i_clamp: 10.0
+      antiwindup: true
+    neck_pitch:
+      p: 6.0
+      i: 0.1
+      d: 0.6
+      i_clamp: 10.0
+      antiwindup: true
+
+# Joint Limits Configuration
+joint_limits:
+  ros__parameters:
+    # Hip joints
+    left_hip_yaw:
+      has_position_limits: true
+      min_position: -1.57
+      max_position: 1.57
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_effort_limits: true
+      max_effort: 100.0
+
+    left_hip_roll:
+      has_position_limits: true
+      min_position: -0.5
+      max_position: 0.5
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_effort_limits: true
+      max_effort: 100.0
+
+    left_hip_pitch:
+      has_position_limits: true
+      min_position: -2.0
+      max_position: 0.5
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_effort_limits: true
+      max_effort: 100.0
+
+    right_hip_yaw:
+      has_position_limits: true
+      min_position: -1.57
+      max_position: 1.57
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_effort_limits: true
+      max_effort: 100.0
+
+    right_hip_roll:
+      has_position_limits: true
+      min_position: -0.5
+      max_position: 0.5
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_effort_limits: true
+      max_effort: 100.0
+
+    right_hip_pitch:
+      has_position_limits: true
+      min_position: -2.0
+      max_position: 0.5
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_effort_limits: true
+      max_effort: 100.0
+
+    # Knee joints
+    left_knee:
+      has_position_limits: true
+      min_position: 0.0
+      max_position: 2.5
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_effort_limits: true
+      max_effort: 100.0
+
+    right_knee:
+      has_position_limits: true
+      min_position: 0.0
+      max_position: 2.5
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_effort_limits: true
+      max_effort: 100.0
+
+    # Ankle joints
+    left_ankle_pitch:
+      has_position_limits: true
+      min_position: -0.5
+      max_position: 0.5
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_effort_limits: true
+      max_effort: 50.0
+
+    left_ankle_roll:
+      has_position_limits: true
+      min_position: -0.2
+      max_position: 0.2
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_effort_limits: true
+      max_effort: 50.0
+
+    right_ankle_pitch:
+      has_position_limits: true
+      min_position: -0.5
+      max_position: 0.5
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_effort_limits: true
+      max_effort: 50.0
+
+    right_ankle_roll:
+      has_position_limits: true
+      min_position: -0.2
+      max_position: 0.2
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_effort_limits: true
+      max_effort: 50.0
+
+    # Shoulder joints
+    left_shoulder_pitch:
+      has_position_limits: true
+      min_position: -2.0
+      max_position: 2.0
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_effort_limits: true
+      max_effort: 80.0
+
+    left_shoulder_roll:
+      has_position_limits: true
+      min_position: -0.5
+      max_position: 1.5
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_effort_limits: true
+      max_effort: 80.0
+
+    left_shoulder_yaw:
+      has_position_limits: true
+      min_position: -2.0
+      max_position: 2.0
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_effort_limits: true
+      max_effort: 80.0
+
+    right_shoulder_pitch:
+      has_position_limits: true
+      min_position: -2.0
+      max_position: 2.0
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_effort_limits: true
+      max_effort: 80.0
+
+    right_shoulder_roll:
+      has_position_limits: true
+      min_position: -1.5
+      max_position: 0.5
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_effort_limits: true
+      max_effort: 80.0
+
+    right_shoulder_yaw:
+      has_position_limits: true
+      min_position: -2.0
+      max_position: 2.0
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_effort_limits: true
+      max_effort: 80.0
+
+    # Elbow and wrist joints
+    left_elbow:
+      has_position_limits: true
+      min_position: -2.0
+      max_position: 0.0
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_effort_limits: true
+      max_effort: 60.0
+
+    left_wrist_pitch:
+      has_position_limits: true
+      min_position: -1.0
+      max_position: 1.0
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_effort_limits: true
+      max_effort: 30.0
+
+    left_wrist_yaw:
+      has_position_limits: true
+      min_position: -1.57
+      max_position: 1.57
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_effort_limits: true
+      max_effort: 30.0
+
+    right_elbow:
+      has_position_limits: true
+      min_position: -2.0
+      max_position: 0.0
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_effort_limits: true
+      max_effort: 60.0
+
+    right_wrist_pitch:
+      has_position_limits: true
+      min_position: -1.0
+      max_position: 1.0
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_effort_limits: true
+      max_effort: 30.0
+
+    right_wrist_yaw:
+      has_position_limits: true
+      min_position: -1.57
+      max_position: 1.57
+      has_velocity_limits: true
+      max_velocity: 2.0
+      has_effort_limits: true
+      max_effort: 30.0
+
+    # Neck joints
+    neck_yaw:
+      has_position_limits: true
+      min_position: -1.0
+      max_position: 1.0
+      has_velocity_limits: true
+      max_velocity: 1.0
+      has_effort_limits: true
+      max_effort: 20.0
+
+    neck_pitch:
+      has_position_limits: true
+      min_position: -0.5
+      max_position: 0.5
+      has_velocity_limits: true
+      max_velocity: 1.0
+      has_effort_limits: true
+      max_effort: 20.0
+
+# Safety Controller Configuration
+safety_controller:
+  ros__parameters:
+    # Emergency stop parameters
+    emergency_stop_timeout: 0.1  # seconds
+    position_error_threshold: 0.5  # radians
+    velocity_error_threshold: 5.0  # rad/s
+    effort_error_threshold: 200.0  # N*m
+
+    # Joint safety limits
+    joint_safety_limits:
+      position_margin: 0.1  # radians
+      velocity_margin: 0.5  # rad/s
+      effort_margin: 10.0   # N*m
+
+# Hardware Interface Configuration
+hardware_interfaces:
+  ros__parameters:
+    # Gazebo simulation interface
+    gazebo_hw_sim:
+      joint_names:
+        - left_hip_yaw
+        - left_hip_roll
+        - left_hip_pitch
+        - left_knee
+        - left_ankle_pitch
+        - left_ankle_roll
+        - right_hip_yaw
+        - right_hip_roll
+        - right_hip_pitch
+        - right_knee
+        - right_ankle_pitch
+        - right_ankle_roll
+        - left_shoulder_pitch
+        - left_shoulder_roll
+        - left_shoulder_yaw
+        - left_elbow
+        - left_wrist_pitch
+        - left_wrist_yaw
+        - right_shoulder_pitch
+        - right_shoulder_roll
+        - right_shoulder_yaw
+        - right_elbow
+        - right_wrist_pitch
+        - right_wrist_yaw
+        - neck_yaw
+        - neck_pitch
+      default_gains:
+        p: 100.0
+        i: 0.01
+        d: 10.0
+        i_clamp: 1.0
+        antiwindup: true
