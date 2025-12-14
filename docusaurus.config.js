@@ -8,7 +8,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
     url: 'https://humanoid-robotic-book-eight.vercel.app/',
-    baseUrl: '/humanoid-robotic-book/',
+    baseUrl: '/',
 
 
   // GitHub repo info
