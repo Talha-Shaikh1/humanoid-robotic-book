@@ -1,73 +1,380 @@
 /**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
+ * Premium Homepage Design - Light & Dark Mode
+ * Clean, Modern & Concise
  */
 
 .heroBanner {
-  padding: 4rem 0;
+  padding: 4rem 1rem;
   text-align: center;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
   position: relative;
   overflow: hidden;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+[data-theme='dark'] .heroBanner {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: white;
 }
 
-.buttons {
+[data-theme='light'] .heroBanner {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  color: #1e293b;
+}
+
+.heroBanner h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+[data-theme='dark'] .heroBanner h1 {
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme='light'] .heroBanner h1 {
+  background: linear-gradient(135deg, #1d4ed8 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroBanner p {
+  font-size: 1.25rem;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  opacity: 0.9;
+}
+
+/* Hero Actions - Compact */
+.heroActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.heroActions .button {
+  border-radius: 50px;
+  padding: 0.9rem 2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.heroActions .button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] .heroActions .button--primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  color: white;
+}
+
+[data-theme='light'] .heroActions .button--primary {
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  color: white;
+}
+
+.heroActions .button--secondary {
+  background: transparent;
+}
+
+[data-theme='dark'] .heroActions .button--secondary {
+  border-color: #4b5563;
+  color: white;
+}
+
+[data-theme='light'] .heroActions .button--secondary {
+  border-color: #d1d5db;
+  color: #374151;
+}
+
+/* Quick Links - Compact */
+.quickLinks {
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.quickLinks h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+[data-theme='dark'] .quickLinks h2 {
+  color: white;
+}
+
+[data-theme='light'] .quickLinks h2 {
+  color: #1e293b;
+}
+
+.linksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.linkCard {
+  padding: 1.5rem;
+  border-radius: 16px;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+[data-theme='dark'] .linkCard {
+  background: #1e293b;
+  color: white;
+  border: 1px solid #334155;
+}
+
+[data-theme='light'] .linkCard {
+  background: white;
+  color: #1e293b;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.linkCard:hover {
+  transform: translateY(-4px);
+}
+
+[data-theme='dark'] .linkCard:hover {
+  background: #2d3748;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='light'] .linkCard:hover {
+  background: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.linkCard h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 2rem;
+  gap: 0.75rem;
 }
 
-.quickModules {
+.linkCard p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.linkCta {
+  color: var(--ifm-color-primary);
+  font-weight: 500;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.linkCard:hover .linkCta {
+  gap: 0.5rem;
+}
+
+/* Quick Actions Bar */
+.quickActions {
+  padding: 2rem 1rem;
+  background: var(--ifm-background-surface-color);
+}
+
+.actionsBar {
   display: flex;
-  flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
-  margin-top: 2rem;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.quickModules .button {
-  margin: 0.25rem;
+.actionsBar .button {
+  border-radius: 50px;
+  padding: 0.8rem 1.5rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
 }
 
+/* Features - Compact */
 .features {
-  padding: 4rem 0;
+  padding: 4rem 1rem;
 }
 
 .features h2 {
   text-align: center;
-  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
 }
 
-.features ul, .features ol {
-  padding-left: 1.5rem;
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.features li {
-  margin-bottom: 0.5rem;
+.featureItem {
+  padding: 1.5rem;
+  border-radius: 16px;
+  text-align: center;
 }
 
-@media screen and (max-width: 768px) {
-  .buttons {
-    flex-direction: column;
-    gap: 1rem;
+[data-theme='dark'] .featureItem {
+  background: #1e293b;
+}
+
+[data-theme='light'] .featureItem {
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.featureIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.featureItem h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.featureItem p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+[data-theme='dark'] .ctaSection {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: white;
+}
+
+[data-theme='light'] .ctaSection {
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  color: #1e293b;
+}
+
+.ctaSection h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.ctaSection p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  opacity: 0.9;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .heroBanner {
+    padding: 3rem 1rem;
+    min-height: auto;
   }
-
-  .quickModules {
+  
+  .heroBanner h1 {
+    font-size: 2.2rem;
+  }
+  
+  .heroBanner p {
+    font-size: 1.1rem;
+  }
+  
+  .heroActions {
     flex-direction: column;
     align-items: center;
   }
-
-  .quickModules .button {
+  
+  .heroActions .button {
     width: 100%;
     max-width: 300px;
-    margin: 0.25rem 0;
+    justify-content: center;
   }
+  
+  .linksGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .actionsBar {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .actionsBar .button {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+  
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .ctaButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .ctaButtons .button {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeUp {
+  animation: fadeUp 0.6s ease-out;
 }

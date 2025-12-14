@@ -4,100 +4,211 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import styles from './index.module.css';
 
-function HomepageHeader() {
+function Hero() {
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header className={clsx('hero', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">🤖 AI-Native Humanoid Robotics Textbook</h1>
-        <p className="hero__subtitle">Your comprehensive guide to Physical AI & Humanoid Robotics</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/module-1-ros2/chapter-1-introduction-to-ros2">
-            📚 Start Learning - Module 1
-          </Link>
-          <Link
-            className="button button--primary button--lg"
-            to="/docs">
-            📖 View Full Curriculum
-          </Link>
-        </div>
-        <div className={styles.quickModules}>
-          <Link
-            className="button button--outline button--lg"
-            to="/docs/module-1-ros2/chapter-1-introduction-to-ros2">
-            🧠 ROS 2: Robotic Nervous System
-          </Link>
-          <Link
-            className="button button--outline button--lg"
-            to="/docs/module-2-gazebo-unity/chapter-1-simulation-environments">
-            🌐 Gazebo & Unity: Digital Twin
-          </Link>
-          <Link
-            className="button button--outline button--lg"
-            to="/docs/module-3-isaac/chapter-1-isaac-architecture">
-            🤖 NVIDIA Isaac: AI-Robot Brain
-          </Link>
-          <Link
-            className="button button--outline button--lg"
-            to="/docs/module-4-vla/chapter-1-vla-introduction">
-            🧠 Vision-Language-Action (VLA)
-          </Link>
+        <div className={styles.fadeUp}>
+          <h1 className="hero__title">
+            <span role="img" aria-label="robot">🤖</span> AI‑Native Humanoid Robotics
+          </h1>
+          <p className="hero__subtitle">
+            Master ROS 2, Simulation, and AI‑Driven Robotics with hands‑on labs and real‑world projects
+          </p>
+          <div className={styles.heroActions}>
+            <Link 
+              className="button button--primary button--lg" 
+              to="/docs/module-1-ros2/chapter-1-introduction-to-ros2"
+            >
+              <span role="img" aria-label="rocket">🚀</span> Start Learning
+            </Link>
+            <Link 
+              className="button button--secondary button--lg" 
+              to="/docs"
+            >
+              <span role="img" aria-label="books">📚</span> View Curriculum
+            </Link>
+          </div>
         </div>
       </div>
     </header>
   );
 }
 
+function QuickLinks() {
+  const links = [
+    {
+      icon: '⚡',
+      title: 'ROS 2 Fundamentals',
+      desc: 'Learn robotic operating system from basics to advanced',
+      to: '/docs/module-1-ros2/chapter-1-introduction-to-ros2',
+      color: '#3b82f6'
+    },
+    {
+      icon: '🎮',
+      title: 'Simulation Labs',
+      desc: 'Gazebo & Unity digital twins for testing and development',
+      to: '/docs/module-2-gazebo-unity/chapter-1-simulation-environments',
+      color: '#8b5cf6'
+    },
+    {
+      icon: '🧠',
+      title: 'AI Integration',
+      desc: 'Vision-Language-Action models for intelligent robots',
+      to: '/docs/module-4-vla/chapter-1-vla-introduction',
+      color: '#10b981'
+    },
+    {
+      icon: '🤖',
+      title: 'Humanoid Projects',
+      desc: 'Build and program humanoid robots from scratch',
+      to: '/docs/category/projects',
+      color: '#f59e0b'
+    }
+  ];
+
+  return (
+    <section className={styles.quickLinks}>
+      <div className="container">
+        <h2>Quick Start Guides</h2>
+        <div className={styles.linksGrid}>
+          {links.map((link) => (
+            <Link key={link.title} className={styles.linkCard} to={link.to}>
+              <h3>
+                <span style={{ color: link.color }}>{link.icon}</span>
+                {link.title}
+              </h3>
+              <p>{link.desc}</p>
+              <span className={styles.linkCta}>
+                Explore <span>→</span>
+              </span>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function QuickActions() {
+  return (
+    <section className={styles.quickActions}>
+      <div className="container">
+        <div className={styles.actionsBar}>
+          <Link 
+            className="button button--outline button--secondary" 
+            to="/docs/tutorials"
+          >
+            <span role="img" aria-label="tutorial">📖</span> Tutorials
+          </Link>
+          <Link 
+            className="button button--outline button--secondary" 
+            to="/docs/labs"
+          >
+            <span role="img" aria-label="lab">🔬</span> Hands-on Labs
+          </Link>
+          <Link 
+            className="button button--outline button--secondary" 
+            to="https://github.com/Talha-Shaikh1/humanoid-robotic-book"
+            target="_blank"
+          >
+            <span role="img" aria-label="github">💻</span> GitHub Repo
+          </Link>
+          <Link 
+            className="button button--outline button--secondary" 
+            to="/community"
+          >
+            <span role="img" aria-label="community">👥</span> Community
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Features() {
+  const features = [
+    {
+      icon: '🧪',
+      title: 'Hands‑On First',
+      desc: 'Practical labs with every theory lesson'
+    },
+    {
+      icon: '🏭',
+      title: 'Industry‑Ready',
+      desc: 'Learn tools used by robotics companies'
+    },
+    {
+      icon: '🧩',
+      title: 'Modular Design',
+      desc: 'Learn in order or jump to what you need'
+    },
+    {
+      icon: '🚀',
+      title: 'Production‑Ready',
+      desc: 'Code and examples ready for deployment'
+    }
+  ];
+
+  return (
+    <section className={styles.features}>
+      <div className="container">
+        <h2>Why Choose This Curriculum?</h2>
+        <div className={styles.featuresGrid}>
+          {features.map((feature) => (
+            <div key={feature.title} className={styles.featureItem}>
+              <div className={styles.featureIcon}>{feature.icon}</div>
+              <h3>{feature.title}</h3>
+              <p>{feature.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CTA() {
+  return (
+    <section className={styles.ctaSection}>
+      <div className="container">
+        <h2>Start Building Intelligent Robots Today</h2>
+        <p>
+          Join hundreds of developers learning cutting‑edge robotics with AI integration
+        </p>
+        <div className={styles.ctaButtons}>
+          <Link 
+            className="button button--primary button--lg" 
+            to="/docs"
+          >
+            <span role="img" aria-label="book">📘</span> Get Started Free
+          </Link>
+          <Link 
+            className="button button--secondary button--lg" 
+            to="https://github.com/Talha-Shaikh1/humanoid-robotic-book"
+            target="_blank"
+          >
+            <span role="img" aria-label="star">⭐</span> Star on GitHub
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
+  
   return (
     <Layout
-      title={`Welcome to ${siteConfig.title}`}
-      description="Comprehensive textbook for AI-Native Humanoid Robotics">
-      <HomepageHeader />
-      <main>
-        <section className={styles.features}>
-          <div className="container">
-            <div className="row">
-              <div className="col col--12">
-                <h2>🎯 Learning Approach</h2>
-                <p>This textbook follows best practices for robotics education:</p>
-                <ul>
-                  <li>🎯 <strong>Hands-on Learning</strong>: Each chapter includes practical exercises</li>
-                  <li>🔧 <strong>Real-World Applications</strong>: Concepts connected to actual robotics problems</li>
-                  <li>🔄 <strong>Modular Design</strong>: Learn at your own pace through interconnected modules</li>
-                  <li>🤖 <strong>AI-Native Approach</strong>: Modern AI techniques integrated throughout</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="row" style={{marginTop: '2rem'}}>
-              <div className="col col--12">
-                <h2>🚀 Getting Started</h2>
-                <ol>
-                  <li><strong>Begin with <Link to="/docs/module-1-ros2/chapter-1-introduction-to-ros2">Module 1</Link></strong> if you're new to robotics</li>
-                  <li><strong>Proceed through modules</strong> sequentially or jump to specific topics</li>
-                  <li><strong>Complete hands-on exercises</strong> to reinforce learning</li>
-                  <li><strong>Use the quizzes and assessments</strong> to validate your understanding</li>
-                </ol>
-              </div>
-            </div>
-
-            <div className="row" style={{marginTop: '2rem', backgroundColor: '#f5f5f5', padding: '1.5rem', borderRadius: '8px'}}>
-              <div className="col col--12">
-                <h2>👥 Target Audience</h2>
-                <ul>
-                  <li>🎓 Students learning Physical AI, ROS 2, Gazebo, Isaac Sim, VLA</li>
-                  <li>👨‍💻 Beginners → intermediate robotics developers</li>
-                  <li>🧑‍🏫 Educators adopting a robotics curriculum</li>
-                  <li>🏆 Hackathon judges evaluating textbook quality and reproducibility</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
+      title={siteConfig.title}
+      description="Learn AI‑Native Humanoid Robotics with ROS 2, Simulation, and VLA models"
+    >
+      <Hero />
+      <QuickLinks />
+      <QuickActions />
+      <Features />
+      <CTA />
     </Layout>
   );
 }
