@@ -7,11 +7,9 @@ const config = {
   tagline: 'A comprehensive guide to Physical AI & Humanoid Robotics',
   favicon: 'img/favicon.ico',
 
-  // GitHub Pages URL
-  url: 'https://talha-shaikh1.github.io',
+    url: 'https://talha-shaikh1.github.io',
+    baseUrl: '/humanoid-robotic-book/',
 
-  // MUST match repo name
-  baseUrl: '/humanoid-robotic-book/',
 
   // GitHub repo info
   organizationName: 'Talha-Shaikh1',
