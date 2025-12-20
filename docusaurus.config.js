@@ -29,7 +29,7 @@ const config = {
       {
         docs: {
           path: './docusaurus/docs',
-          sidebarPath: './docusaurus/sidebars.js',
+          sidebarPath: './docusaurus/src/components/sidebar.js',
           editUrl:
             'https://github.com/Talha-Shaikh1/humanoid-robotic-book/tree/main/',
         },

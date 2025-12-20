@@ -1,0 +1,343 @@
+/* ChatbotWidget.module.css - Updated */
+
+.widgetButton {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: linear-gradient(135deg, #0078d4, #005fa3);
+  color: white;
+  font-size: 28px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10000; /* Increased z-index */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  border: none;
+  user-select: none;
+}
+
+.widgetButton:hover {
+  transform: scale(1.12);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+}
+
+.chatModal {
+  position: fixed;
+  bottom: 60px;
+  right: 24px;
+  width: 380px;
+  height: 485px;
+  background: white;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chatHeader {
+  background: linear-gradient(135deg, #0078d4, #005fa3);
+  color: white;
+  padding: 16px 20px;
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  min-height: 56px;
+  box-sizing: border-box;
+}
+
+.closeButton {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+  z-index: 1; /* Ensure button is clickable */
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.chatBody {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background: #f9fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 0;
+  overscroll-behavior: contain; /* Prevent scroll propagation */
+}
+
+.userRow {
+  display: flex;
+  justify-content: flex-end;
+  animation: fadeInUp 0.3s ease;
+}
+
+.botRow {
+  display: flex;
+  justify-content: flex-start;
+  animation: fadeInUp 0.3s ease;
+}
+
+.userMsg {
+  background: linear-gradient(135deg, #0078d4, #0066c0);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 18px 18px 4px 18px;
+  max-width: 80%;
+  word-wrap: break-word;
+  box-shadow: 0 2px 8px rgba(0, 120, 212, 0.2);
+  line-height: 1.4;
+}
+
+.botMsg {
+  background: white;
+  color: #333;
+  padding: 12px 16px;
+  border-radius: 18px 18px 18px 4px;
+  max-width: 80%;
+  word-wrap: break-word;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8e8e8;
+  line-height: 1.4;
+}
+
+.inputContainer {
+  display: flex;
+  padding: 16px;
+  border-top: 1px solid #eee;
+  background: white;
+  flex-shrink: 0;
+  gap: 8px;
+}
+
+.chatInput {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 24px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 14px;
+  transition: border 0.2s ease;
+  cursor: text; /* Show text cursor */
+}
+
+.chatInput:focus {
+  border-color: #0078d4;
+  box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.1);
+}
+
+.sendButton {
+  padding: 12px 24px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #0078d4, #005fa3);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  min-width: 80px;
+}
+
+.sendButton:hover:not(:disabled) {
+  background: linear-gradient(135deg, #0066c0, #004d8c);
+  transform: translateY(-1px);
+}
+
+.sendButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.selectedBox {
+  background: linear-gradient(135deg, #fff8e1, #ffecb3);
+  border-left: 4px solid #ffb703;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  margin-bottom: 8px;
+  animation: slideIn 0.3s ease;
+}
+
+.selectedBox strong {
+  color: #e65100;
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.selectedBox p {
+  color: #5d4037;
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.welcomeMessage {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e0e0;
+  margin: 10px 0;
+}
+
+.welcomeMessage h3 {
+  color: #0078d4;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.welcomeMessage p {
+  color: #666;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.welcomeMessage ul {
+  text-align: left;
+  padding-left: 20px;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.welcomeMessage li {
+  margin-bottom: 6px;
+}
+
+.loadingRow {
+  display: flex;
+  justify-content: flex-start;
+  animation: fadeIn 0.3s ease;
+}
+
+.typingIndicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 16px;
+  background: white;
+  border-radius: 18px 18px 18px 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8e8e8;
+}
+
+.typingIndicator span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0078d4;
+  opacity: 0.6;
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+.typingIndicator span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.typingIndicator span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes typing {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .chatModal {
+    width: calc(100vw - 48px);
+    height: 70vh;
+    bottom: 80px;
+    right: 24px;
+  }
+  
+  .widgetButton {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* Overlay for better UX */
+.chatOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 9998;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .chatOverlay {
+    display: block;
+  }
+}
