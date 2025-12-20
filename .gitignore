@@ -11,6 +11,7 @@ docusaurus/build/
 .mypyc_cache/
 .venv/
 
+.mypyc_cache/
 
 # Environment variables
 .env*
